@@ -18,24 +18,25 @@ function App() {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
 
-  useEffect(() => {
-    if (!auth.authenticate) {
-      dispatch(isUserLogin());
-    }
+  // useEffect(() => {
+  //   if (!auth.authenticate) {
+  //     dispatch(isUserLogin());
+  //   }
 
-    if (auth.authenticate) {
-      dispatch(fetchedAllAssesments());
-    }
-  }, [auth.authenticate]);
+  //   if (auth.authenticate) {
+  //     dispatch(fetchedAllAssesments());
+  //   }
+  // }, [auth.authenticate]);
 
   return (
     <div className="App">
       <Switch>
-        <PrivateRotue exact path="/" component={Home} />
+        {/* <PrivateRotue exact path="/" component={Home} />
         <PrivateRotue path="/user" component={UserPage} />
         <PrivateRotue path="/assesment" component={AssesmentPage} />
         <PrivateRotue path="/questions/:id" component={QuestionPage} />
-        <PrivateRotue path="/result" component={ResultPage} />
+        <PrivateRotue path="/result" component={ResultPage} /> */}
+        <Route exact path="/" component={Signup} />
         <Route path="/signup" component={Signup} />
         <Route path="/signin" component={Signin} />
         <Route path="*" component={Page404} />
